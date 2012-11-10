@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121110073946) do
+ActiveRecord::Schema.define(:version => 20121110085118) do
+
+  create_table "proposals", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -23,6 +31,28 @@ ActiveRecord::Schema.define(:version => 20121110073946) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "skills", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "proposal_id"
+    t.integer  "c"
+    t.integer  "java"
+    t.integer  "objective_c"
+    t.integer  "c_plus_plus"
+    t.integer  "c_sharp"
+    t.integer  "python"
+    t.integer  "ruby_on_rails"
+    t.integer  "ruby"
+    t.integer  "perl"
+    t.integer  "delphi"
+    t.integer  "matlab"
+    t.integer  "html"
+    t.integer  "css"
+    t.integer  "javascript"
+    t.integer  "php"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

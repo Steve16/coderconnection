@@ -5,12 +5,20 @@
   <%= f.input :email, :required => true %>
   <%= f.file_field :avatar %> 
   
+  	  
+  	  <%= f.fields_for :skill do |b| %>
+  	  
+  	  	
+  	  	
+  	  <% end %>
+  
   
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
   <%= f.button :submit, 'Update', :class => 'btn-primary' %>
 <% end %>
+
 
 <h3>Cancel my account</h3>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
