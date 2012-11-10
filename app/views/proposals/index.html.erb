@@ -2,10 +2,39 @@
 
 
 
-<ul class="users">
-  <% @proposals.each do |proposal| %>
-    <li>
-      <%= link_to proposal.title, proposal %>
-    </li>
-  <% end %>
-</ul>
+<div class="row-fluid">
+		<div class="span3" style="padding-top:8px">
+			<p class="main-titles">Custom Search</p>
+		</div>
+		<div class="span9">
+			<div>
+			    <ul class="nav nav-pills pull-left">
+			       <li class="active main-titles"><a href="#">Recent</a></li>
+			       <li><a href="#" class="main-titles">Popular</a></li>
+			       <li><a href="#" class="main-titles">Recommended</a></li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+	
+	
+
+
+	
+	
+	<div class="row-fluid">
+		<div class="span3">
+		</div>
+		<div class="span9">
+			
+			  <% @proposals.each do |p| %>
+			<hr class="featurette-divider">
+			<div class="featurette">
+				<%= image_tag p.avatar.url(:thumb) %>
+				<h4 class="featurette-heading"><%= link_to p.title, p %></h4>
+				<p> <%= p.description %> </p>
+			<% end %>
+			
+
+		</div>
+	</div>

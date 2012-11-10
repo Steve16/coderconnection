@@ -1,7 +1,9 @@
-<%= form_for(@proposal) do |f| %>
+<%= form_for @proposal, :html => { :multipart => true } do |f| %>
   
   <div class="field">
-  	<%= f.text_area :title, placeholder: "Proposal Title..." %>
+  	
+	<%= f.file_field :avatar %>
+  	<%= f.text_field :title, placeholder: "Proposal Title..." %>
     <%= f.text_area :description, placeholder: "Describe the project or job..." %>
   </div>
   <%= f.submit "Submit", class: "btn btn-large btn-primary" %>

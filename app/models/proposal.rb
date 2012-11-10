@@ -2,6 +2,9 @@ class Proposal < ActiveRecord::Base
   belongs_to :user, :dependent => :destroy
   attr_accessible :title, :description, :user_id
   
+  attr_accessible :avatar
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
   #validates :user_id, presence: true
   
   default_scope order: 'proposals.created_at DESC'

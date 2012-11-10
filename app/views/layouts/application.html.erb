@@ -11,20 +11,16 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "sample app", '#', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "Help",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <div class="masthead container-narrow">
+		<ul class="nav nav-pills pull-right">
+			<form class="navbar-search pull-left">
+			<input type="text" class="search-query" placeholder="Find people, projects or skills">
+			</form>
+			<li><a href="#">Fernando De Pombo</a></li>
+	    </ul> 
+	    <h1 class="muted">Berkeley Coder Connection</h1>
+	    <hr>
+	</div>
 
     <div class="container">
       <%= yield %>

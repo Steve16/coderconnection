@@ -1,10 +1,76 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-THIS IS THE HOME PAGE FOR LOGGED IN USERS
-WELCOME 
 
 
-<%= render 'shared/proposal_form' %>
+
+<!-- <%= render 'shared/proposal_form' %> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>B C C</title>
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+	      body {
+	        padding-top: 0px;
+	        padding-bottom: 40px;
+	        padding-left: 30px;
+	      }
+		  .container-color {
+			background-color:#F0F0FF ;
+			min-height: 500px;
+		  }
+		  .main-titles {
+			font-size: 18px;
+			font-weight: bold;
+		  }
+		  .featurette {
+			font-size:14px;
+			padding-right:30px;
+		  }
+		  .project-summary {
+			min-height:100px;
+		  }
+	      /* Custom container */
+	      .container-narrow {
+	        max-width: 1200px;
+	        padding-top: 20px;
+	      }
+	      .container-narrow > hr {
+	        margin: 15px;
+	      }
+
+	      /* Main marketing message and sign up button */
+	      .jumbotron {
+	        margin: 60px 0;
+	        text-align: center;
+	      }
+	      .jumbotron h1 {
+	        font-size: 72px;
+	        line-height: 1;
+	      }
+	      .jumbotron .btn {
+	        font-size: 21px;
+	        padding: 14px 24px;
+	      }
+
+	      /* Supporting marketing content */
+	      .marketing {
+	        margin: 60px 0;
+	      }
+	      .marketing p + h4 {
+	        margin-top: 28px;
+	      }
+	    </style>
+  </head>
+  <body>
+	 
+	
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
 
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

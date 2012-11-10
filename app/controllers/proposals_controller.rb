@@ -9,6 +9,7 @@ class ProposalsController < ApplicationController
   end
 
   def create
+    #@proposal = Proposal.create( params[:proposal] )
     @user = current_user #User.find(params[:user_id])
     @proposal = @user.proposals.new(params[:proposal])
     if @proposal.save
