@@ -7,6 +7,6 @@ class CreateProposals < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :user_id
+    add_index :proposals, :user_id
   end
 end
