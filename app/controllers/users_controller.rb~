@@ -1,0 +1,21 @@
+class UsersController < ApplicationController
+  
+  before_filter :authenticate_user! #makes sure the user is logged in
+  
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def self.all_technical_skills
+  %w(Web_development iOS_development Android_Development Facebook_App_Development 3-D_Web_Animation)
+  end
+
+  def self.proficient_languages_and_frameworks
+  %w(C C# C++ Java Python Ruby_on_rails Django Scheme HTML5 MATLAB Javascript JQuery Ajax)
+  end
+  
+end

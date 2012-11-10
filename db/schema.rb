@@ -21,7 +21,12 @@ ActiveRecord::Schema.define(:version => 20121111074944) do
     t.datetime "updated_at",  :null => false
   end
 
+
   add_index "proposals", ["user_id", "created_at"], :name => "index_proposals_on_user_id_and_created_at", :unique => true
+
+  add_index "proposals", ["email"], :name => "index_proposals_on_email", :unique => true
+  add_index "proposals", ["reset_password_token"], :name => "index_proposals_on_reset_password_token", :unique => true
+
 
   create_table "roles", :force => true do |t|
     t.string   "name"
