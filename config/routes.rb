@@ -21,7 +21,7 @@ Coderconnection::Application.routes.draw do
      resources :proposals
   end
   
-  resources :microposts, only: [:create, :destroy]
+  resources :proposals, only: [:create, :destroy, :index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

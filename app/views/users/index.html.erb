@@ -2,6 +2,9 @@
 <p>Find me in app/views/users/index.html.erb</p>
 
 THIS IS THE HOME PAGE FOR LOGGED IN USERS
- WELCOME 
+WELCOME 
+
+
+<%= render 'shared/proposal_form' %>
 
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

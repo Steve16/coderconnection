@@ -1,20 +1,26 @@
 class ProposalsController < ApplicationController
   def new
+    #   <%= render 'shared/micropost_form' %>
+    #@proposal = current_user.proposals.build if signed_in?
+  end
+  
+  def index
+    @proposals = Proposal.all
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user #User.find(params[:user_id])
     @proposal = @user.proposals.new(params[:proposal])
     if @proposal.save
 	flash[:notice] = "#{@proposal.title} was succesfully created."
-	redirect_to user_path(@user)
+  redirect_to user_path(@user)
     else
 	render 'new'
     end
   end
 
   def update
-    @user = User.find(params[:user_id])
+    @user = current_user #User.find(params[:user_id])
     if @user.proposals.update_attributes(params[:proposal])
 	flash[:notice] = "#{@proposal.title} was succesfully updated."
 	redirect_to user_path(@user)
@@ -27,7 +33,7 @@ class ProposalsController < ApplicationController
   end
 
   def delete
-    @user = User.find(params[:user_id])
+    @user = current_user #User.find(params[:user_id])
     @proposal = @user.proposals.find(params[:id])
     @proposal.destroy
     redirect_to user_path(@user) 

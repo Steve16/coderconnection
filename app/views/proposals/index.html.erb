@@ -1,0 +1,11 @@
+<h1>All Proposals</h1>
+
+
+
+<ul class="users">
+  <% @proposals.each do |proposal| %>
+    <li>
+      <%= link_to proposal.title, proposal %>
+    </li>
+  <% end %>
+</ul>
