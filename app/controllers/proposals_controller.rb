@@ -21,6 +21,7 @@ class ProposalsController < ApplicationController
     else
 	render 'edit'
     end
+  end
 
   def destroy
   end
