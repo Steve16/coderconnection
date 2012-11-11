@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20121111075440) do
 
   add_index "proposals", ["email"], :name => "index_proposals_on_email", :unique => true
   add_index "proposals", ["reset_password_token"], :name => "index_proposals_on_reset_password_token", :unique => true
+  add_index "proposals", ["user_id"], :name => "index_proposals_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
