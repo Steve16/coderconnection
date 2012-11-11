@@ -4,23 +4,17 @@
   <%= f.input :name, :autofocus => true %>
   <%= f.input :email, :required => true %>
   <%= f.file_field :avatar %> 
+<<<<<<< HEAD
   
 	<h1>Technical Skills:</h1>
   	<ul>
-	<%= Skill.all_technical_skills.each do |s|  %>
-	  <%= check_box("skills_checked", "skills", {current_user.tag_list <<  s}, s, nil) %>
+	<%= Proposal.all_technical_skills.each do |s|  %>
+	  <%= f.check_box("skills_checked", "skills", {:multiple => true}, s, nil) %>
 	<%= end %>
+	<%= current_user.tag_list << "skills_checked".value %>
+=======
+>>>>>>> 5267b789f843f863e1dba7dd26feca884dbb9a73
 
-	<h1>Proficient Languages and Frameworks:</h1>
-  	<ul>
-	<%= @all_proficient_languages_and_frameworks.each do |p|  %>
-	  <%= check_box("lang_and_frame_checked", "skills", {:multiple => true}, p, nil) %>
-	<%= end %>
-  	  	
-  	  	
-  	  
-  
-  
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>

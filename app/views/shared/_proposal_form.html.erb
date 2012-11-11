@@ -1,7 +1,9 @@
-<%= form_for(@proposals) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<%= form_for @proposal, :html => { :multipart => true } do |f| %>
+  
   <div class="field">
-  	<%= f.text_area :description, placeholder: "Proposal Title..." %>
+  	
+	<%= f.file_field :avatar %>
+  	<%= f.text_field :title, placeholder: "Proposal Title..." %>
     <%= f.text_area :description, placeholder: "Describe the project or job..." %>
   </div>
   <%= f.submit "Submit", class: "btn btn-large btn-primary" %>

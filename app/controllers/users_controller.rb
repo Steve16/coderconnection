@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    @proposal = current_user.microposts.build if signed_in?
+    @proposal = current_user.proposals.build if signed_in?
   end
 
   def show
