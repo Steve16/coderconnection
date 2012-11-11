@@ -7,9 +7,10 @@
   
 	<h1>Technical Skills:</h1>
   	<ul>
-	<%= @all_technical_skills.each do |s|  %>
-	  <%= check_box("skills_checked", "skills", {:multiple => true}, s, nil) %>
+	<%= Proposal.all_technical_skills.each do |s|  %>
+	  <%= f.check_box("skills_checked", "skills", {:multiple => true}, s, nil) %>
 	<%= end %>
+	<%= current_user.tag_list << "skills_checked".value %>
 
 	<h1>Proficient Languages and Frameworks:</h1>
   	<ul>

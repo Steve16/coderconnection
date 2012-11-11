@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   attr_accessible :avatar
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@+berkeley+.+edu/i
   validates_presence_of :name #devise automatically makes sure email and password are present
-  validates_uniqueness_of :email, :case_sensitive => false
+  validate :email, format: { with: VALID_EMAIL_REGEX }
   
 end

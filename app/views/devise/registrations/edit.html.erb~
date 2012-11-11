@@ -7,14 +7,14 @@
   
 	<h1>Technical Skills:</h1>
   	<ul>
-	<%= @all_technical_skills.each do |s|  %>
-	  <%= check_box("skills_checked", "skills", {:multiple => true}, s, nil) %>
+	<%= Skill.all_technical_skills.each do |s|  %>
+	  <%= check_box("skills_checked", "skills", {current_user.tag_list <<  s}, s, nil) %>
 	<%= end %>
 
 	<h1>Proficient Languages and Frameworks:</h1>
   	<ul>
 	<%= @all_proficient_languages_and_frameworks.each do |p|  %>
-	  <%= check_box("l&f_checked", "skills", {:multiple => true}, p, nil) %>
+	  <%= check_box("lang_and_frame_checked", "skills", {:multiple => true}, p, nil) %>
 	<%= end %>
   	  	
   	  	
