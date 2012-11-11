@@ -1,13 +1,16 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
-<h2>Sign up</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :name, :autofocus => true %> 
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
-  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+<br><br>
+<!-- SIGN IN FORM STARTS HERE -->
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, :required => false, :autofocus => true %>
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+
+    <%= f.button :submit, "Sign in" %>
+
 <% end %>
-<%= render "devise/shared/links" %>
+
+<!-- SIGN IN FORM ENDS HERE -->

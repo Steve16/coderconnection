@@ -7,11 +7,13 @@ Coderconnection::Application.routes.draw do
 
   #get "home/index"
 
-  authenticated :user do
-    root :to => 'home#index'
+  
+  authenticated :user do  
+    #The root for authenticated users
+    root :to => 'users#index'
   end
   
-  #root :to => "home#index"
+  #root when not logged in. ie normal home page
   root :to => "home#index"
   
   devise_for :users
